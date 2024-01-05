@@ -35,72 +35,67 @@ class Car {
 const myFirstCar = new Car('Honda', 'Accord', 2004, 'tan');
 
 
+
+// Global Variables
+const display = document.getElementById('displayArea');
+const card = document.createElement('div');
+
 const trucky = document.getElementById('trucky');
 
 
-function setTitle() {
-	// create the h4 element
-	const title = document.createElement('h2');
-	// set h4 content to vehicle make input value
-	title.textContent = (`${vehicleMake.value} ${vehicleModel.value}`);
-	// Append the title to the card
-	card.append(title);
-}
-
-function setSpec() {
-	// Create the hr element
-	const rule = document.createElement('hr');
-	// Append the hr Element  to the card
-	card.append(rule);
-	// Create the detail elements
-	const specYear = document.createElement('h3');
-	// set the h3 element to vehicle year and color values
-	specYear.textContent = (`${vehicleYear.value} ${vehicleColor.value}`);
-	// Append the specs to the card
-	card.append(specYear);
-}
-
-
-const display = document.getElementById('displayArea');
-
-const card = document.createElement('p');
+const titleTag = document.createElement('h3');
+const descriptionTag = document.createElement('h4')	;
+const rule = document.createElement('hr');
+	
 
 function buildCard() {
-	// Set the attributes for the card
-	card.setAttribute('class', 'card');
-	// Append the Card to the Display Area
-	if (display) {
-		display.append(card);
-		setTitle();
-		setSpec();
-	};
-}
+		// Create the input object 
+		const newCar = new Car(this.make, this.model, this.year, this.color);
+		const div = document.createElement('div');
+		// Assign the div the class of card
+		div.setAttribute('class', 'card');
+		// Append the div to the display area
+		display.append(div);
+		
+		// Creates h4 element - sets text content as object values
+		function setTitle() {
+			const title = document.createElement('h4');
+			title.textContent= `${this.make.value} ${this.model.value}`;
+			// Append the title to div element
+			div.append(title);
+		}
 
-const vehicleMake = document.getElementById('make');
-const vehicleModel = document.getElementById('model');
-const vehicleYear = document.getElementById('year');
-const vehicleColor = document.getElementById('color');
+		setTitle(); // Calling the function
 
+		// Creates h3 element - sets text content as object values
+		function setSpecs() {
+			const specs = document.createElement('h3');
+			specs.textContent= `${this.year.value} ${this.color.value}`;
+			div.append(specs);
+		};
+
+		setSpecs(); // Calling the function
+};
 
 // Variable for Add Vehicle Button
 const addVehicle = document.getElementById('addVehicle');
 
 // Adding Add Vehicle Event listener
 addVehicle.addEventListener('click', function() {
+	// Generate new card
 	buildCard();
-	const addition = new Car(this.make, this.model, this.year, this.color)
-	addition.make = vehicleMake.value;
-	addition.model = vehicleModel.value;
-	addition.year = vehicleYear.value;
-	addition.color = vehicleColor.value;
-	// card.append(addition)
-	console.log(addition);
+	
 });
 
+// Reset form upon completion
+function reset() {
+	document.getElementById('form').reset;
+	form = document.getElementById('form');
+	form.preventDefault();
+}
 
 // Variable for Reset Form button
 const resetForm = document.getElementById('reset');
-
 
 // Variable for Clear List button
 const clearList = document.getElementById('clearList');

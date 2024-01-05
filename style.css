@@ -189,13 +189,17 @@ form {
 }
 
 form > input {
-	font-size: .5em;
+	font-size: 1em;
 	width: 50%;
 	align-items: center;
 	justify-content: center;
 	margin: 0 auto;
 	min-height: 35%;
-	max-height: 35%;
+	max-height: 50%;
+}
+
+.input_field {
+	height: 5vh;
 }
 
 .displayArea {
@@ -207,6 +211,7 @@ form > input {
 	margin-bottom: 1em;
 	border-radius: 3px;
 	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
 	gap: .25em;
 }
@@ -224,6 +229,9 @@ form > input {
 	
 }
 
+.hidden {
+	display: none;
+}
 
 .card:hover {
 	transform: scale(1.1);
