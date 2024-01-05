@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" href="style.css"/>
+</head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+<script src="script.js" defer></script>
+<title id='title'>FULLSEND</title>
+<header>
+	<div class="sticky">
+		<img src="images/pickup_icon.png" id="trucky">
+	</div>	
+	<nav class='top-nav'> 
+		<a href="">HOME</a>		
+	 </nav>
+</header>
+<body>
+	<main>
+		<form class="input">
+			<label for="make">Enter Make:</label>
+			<input type="text" for="make" id="make" required placeholder="Enter Make" autocomplete="on">
+			<label for="model">Enter Model:</label>
+			<input type="text" for="model" id="model" required placeholder="Enter Model" autocomplete="on">
+			<label for="year">Enter Year:</label>
+			<input type="month" for="year" id="year" required placeholder="MMYYYY" autocomplete="on">
+			<label for="color">Enter Color:</label>
+			<input type="text" for="color" id="color" required placeholder="Enter Color" autocomplete="on">
+			<section class="controlPanel">
+				<input type="button" class="button" id="addVehicle" value="Add Vehicle">
+				<input type="reset" class="button reset" id="reset" value="Clear Form">
+				<input type="button" class="button clearList" id="clearList" value="Reset List">
+			</section>
+		</form>
+		<section class="container displayArea" id="displayArea"></section>
+	</main>
+</body>
+<footer>
+	<p>DBrown 2024</p>
+</footer>
+</html>
